@@ -6,7 +6,7 @@ var data = require("./data");
 
 var app = express();
 
-var PORT = 3000;
+var PORT = process.event.PORT || 3000;
 
 var bodyParser = require("body-parser");
 
