@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+  </head>
+  <body>
+    <h1>This is the survey page</h1>
+
+    <form name="submitform" method="post" action="/api/friends">
+      <p>
+        First name:<br />
+        <input type="text" name="firstname" /><br />
+      </p>
+
+      <p>
+        <label for="q1">How would you describe your sense of humor</label>
+        <select id="q1" name="q1">
+          <option value="1">Fart jokes</option>
+          <option value="2">"That's what she said"</option>
+          <option value="3">"Oonagi"</option>
+          <option value="4">Monty Python</option>
+        </select>
+      </p>
+      <p>
+        <label for="q2">What is your favorite animal?</label>
+        <select id="q2" name="q2">
+          <option value="1">Unicorn</option>
+          <option value="2">Comma Chameleon</option>
+          <option value="3">Mufasa</option>
+          <option value="4">Strawberry</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="q3">What is your favorite dance move?</label>
+        <select id="q3" name="q3">
+          <option value="1">Funky Chicken</option>
+          <option value="2">Pop & Lock</option>
+          <option value="3">Crank the whip</option>
+          <option value="4">Techno fist pump</option>
+        </select>
+      </p>
+      <p>
+        <label for="q4">How would you describe your fashion sense</label>
+        <select id="q4" name="q4">
+          <option value="1">Closet explosion</option>
+          <option value="2">Not a girl/boy, not yet a woman/man</option>
+          <option value="3">Dora the Explorer</option>
+          <option value="4">Blues Clues</option>
+        </select>
+      </p>
+      <p>
+        <label for="q5">Which cartoon theme song is your favorite?</label>
+        <select id="q5" name="q5">
+          <option value="1">Spongebob SquarePants</option>
+          <option value="2">Kim Possible</option>
+          <option value="3">Dexter's Laboratory</option>
+          <option value="4">Powerpuff Girls</option>
+        </select>
+      </p>
+      <p>
+        <label for="q6">Which is closest to your spirit food?</label>
+        <select id="q6" name="q6">
+          <option value="1">Spam</option>
+          <option value="2">Guacamole</option>
+          <option value="3">Hot sauce</option>
+          <option value="4">Meatz</option>
+        </select>
+      </p>
+      <p>
+        <label for="q7">Would you rather...</label>
+        <select id="q7" name="q7">
+          <option value="1">Sit on the iron throne</option>
+          <option value="2">Dance in a Beyonce video</option>
+          <option value="3">Become a jedi master</option>
+          <option value="4">Take a nap in a hammock</option>
+        </select>
+      </p>
+      <p>
+        <label for="q8">Who would you rather meet in person?</label>
+        <select id="q8" name="q8">
+          <option value="1">Curious George</option>
+          <option value="2">Bob the Builder</option>
+          <option value="3">Mr. Clean</option>
+          <option value="4">Captain Planet</option>
+        </select>
+      </p>
+      <p>
+        <label for="q9">Your friends would describe you as:</label>
+        <select id="q9" name="q9">
+          <option value="1">zany</option>
+          <option value="2">adventurous</option>
+          <option value="3">relaxed</option>
+          <option value="4">bori...I mean, responsible</option>
+        </select>
+      </p>
+      <p>
+        <label for="q10"
+          >When stranded on a desert island, you can't live without:</label
+        >
+        <select id="q10" name="q10">
+          <option value="1">Axe body spray</option>
+          <option value="2">Friends Reruns</option>
+          <option value="3">Epix streaming app</option>
+          <option value="4">My bff Jill</option>
+        </select>
+
+        <input type="submit" value="Submit" id="submitButton" />
+      </p>
+    </form>
+
+    <!-- <script src="index.js"></script> -->
+  </body>
+</html>
