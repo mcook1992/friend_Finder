@@ -6,9 +6,11 @@ var data = require("./data");
 
 var app = express();
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 var bodyParser = require("body-parser");
+
+var array = [];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
@@ -37,16 +39,16 @@ app.post("/api/friends", function(req, res) {
   var newObject = {
     name: req.body.firstname,
     answers: [
-      req.body.q1,
-      req.body.q2,
-      req.body.q3,
-      req.body.q4,
-      req.body.q5,
-      req.body.q6,
-      req.body.q7,
-      req.body.q8,
-      req.body.q9,
-      req.body.q10
+      parseInt(req.body.q1),
+      parseInt(req.body.q2),
+      parseInt(req.body.q3),
+      parseInt(req.body.q4),
+      parseInt(req.body.q5),
+      parseInt(req.body.q6),
+      parseInt(req.body.q7),
+      parseInt(req.body.q8),
+      parseInt(req.body.q9),
+      parseInt(req.body.q10)
     ]
   };
   var closestMatch = data.getDifference(newObject);

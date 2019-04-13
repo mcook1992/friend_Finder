@@ -24,7 +24,7 @@ newObject = {
   ]
 };
 
-getDifference(newObject);
+// getDifference(newObject);
 
 function getDifference(responseObject) {
   //seeding some initial values into the array
@@ -37,16 +37,16 @@ function getDifference(responseObject) {
   object2 = {
     name: "James Bond",
     image: "link",
-    answers: [5, 4, 3, 2, 2, 1, 2, 3, 4, 5]
+    answers: [5, 5, 5, 5, 5, 5, 5, 5, 4, 5]
   };
 
-  object2 = {
+  object3 = {
     name: "Jennifer Lopez",
     image: "link",
     answers: [3, 3, 3, 3, 3, 3, 3, 3, 4, 3]
   };
 
-  var array = [object1, object2];
+  var array = [object1, object2, object3];
 
   //sum of all the answers on the person we're comparing everything else to
   var currentSum;
@@ -71,13 +71,13 @@ function getDifference(responseObject) {
   var i = 0;
 
   comparisonDifferenceArray.forEach(function(element) {
-    var difference = Math.abs(element - currentSum);
-    console.log("The difference is: " + difference);
+    // var difference = Math.abs(element - currentSum);
+    // console.log("The difference is: " + difference);
 
     //if the score is closer to the number than the current cloest match
-    if (difference < currentClosestNumber) {
+    if (element < currentClosestNumber) {
       console.log("We're in the if statement");
-      currentClosestNumber = difference;
+      currentClosestNumber = element;
       closestMatch = array[i];
     }
 
