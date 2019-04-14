@@ -85,6 +85,7 @@ function getDifference(responseObject) {
   });
 
   console.log(closestMatch.name);
+  array.push(responseObject);
   return closestMatch;
   // compareData();
 }
