@@ -3,50 +3,10 @@ var closestMatch;
 
 //just for testing right now
 
-var randomNumber = Math.floor(Math.random() * 5);
-
-console.log(randomNumber);
-
-newObject = {
-  name: "NewObject",
-  image: "link",
-  answers: [
-    randomNumber,
-    randomNumber,
-    randomNumber,
-    randomNumber,
-    randomNumber,
-    randomNumber,
-    randomNumber,
-    randomNumber,
-    randomNumber,
-    randomNumber
-  ]
-};
-
 // getDifference(newObject);
 
-function getDifference(responseObject) {
+function getDifference(responseObject, initialArray) {
   //seeding some initial values into the array
-  object1 = {
-    name: "Charlie Sheen",
-    image: "link",
-    answers: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-  };
-
-  object2 = {
-    name: "James Bond",
-    image: "link",
-    answers: [5, 5, 5, 5, 5, 5, 5, 5, 4, 5]
-  };
-
-  object3 = {
-    name: "Jennifer Lopez",
-    image: "link",
-    answers: [3, 3, 3, 3, 3, 3, 3, 3, 4, 3]
-  };
-
-  var array = [object1, object2, object3];
 
   //sum of all the answers on the person we're comparing everything else to
   var currentSum;
@@ -58,8 +18,8 @@ function getDifference(responseObject) {
 
   //including the minus one since the current response we're comparing the rest of the array to is the last value
 
-  for (var i = 0; i < array.length; i++) {
-    var comparisonSum = array[i].answers.reduce((a, b) => a + b, 0);
+  for (var i = 0; i < initialArray.length; i++) {
+    var comparisonSum = initialArray[i].answers.reduce((a, b) => a + b, 0);
     var difference = Math.abs(comparisonSum - currentSum);
     console.log(difference);
     comparisonDifferenceArray.push(difference);
@@ -78,15 +38,15 @@ function getDifference(responseObject) {
     if (element < currentClosestNumber) {
       console.log("We're in the if statement");
       currentClosestNumber = element;
-      closestMatch = array[i];
+      closestMatch = initialArray[i];
     }
 
     i++;
   });
 
   console.log(closestMatch.name);
-  array.push(responseObject);
-  return closestMatch;
+  initialArray.push(responseObject);
+  return { match: closestMatch, array: initialArray };
   // compareData();
 }
 

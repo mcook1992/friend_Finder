@@ -10,7 +10,25 @@ var PORT = process.env.PORT || 3001;
 
 var bodyParser = require("body-parser");
 
-var array = [];
+object1 = {
+  name: "Charlie Sheen",
+  image: "link",
+  answers: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+};
+
+object2 = {
+  name: "James Bond",
+  image: "link",
+  answers: [5, 5, 5, 5, 5, 5, 5, 5, 4, 5]
+};
+
+object3 = {
+  name: "Jennifer Lopez",
+  image: "link",
+  answers: [3, 3, 3, 3, 3, 3, 3, 3, 4, 3]
+};
+
+var array = [object1, object2, object3];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
@@ -51,6 +69,9 @@ app.post("/api/friends", function(req, res) {
       parseInt(req.body.q10)
     ]
   };
-  var closestMatch = data.getDifference(newObject);
-  res.send("Congratulations! Your best match is: " + closestMatch.name + ".");
+  var closestMatch = data.getDifference(newObject, array);
+  array = closestMatch.array;
+  res.send(
+    "Congratulations! Your best match is: " + closestMatch.match.name + "."
+  );
 });
