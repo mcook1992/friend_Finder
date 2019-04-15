@@ -19,19 +19,19 @@ app.set("view engine", "handlebars");
 
 object1 = {
   name: "Charlie Sheen",
-  image: "link",
+  image: "assets/Charlie_Sheen_2012.jpg",
   answers: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 };
 
 object2 = {
-  name: "James Bond",
-  image: "link",
+  name: "Daniel Craig",
+  image: "assets/Daniel_Craig_2,_2012.jpg",
   answers: [5, 5, 5, 5, 5, 5, 5, 5, 4, 5]
 };
 
 object3 = {
   name: "Jennifer Lopez",
-  image: "Link",
+  image: "assets/JLo.jpg",
   answers: [3, 3, 3, 3, 3, 3, 3, 3, 4, 3]
 };
 

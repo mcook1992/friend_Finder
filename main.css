@@ -1,0 +1,19 @@
+body {
+  background: lightblue;
+}
+
+.Main-stuff {
+  background: lightgray;
+  text-align: center;
+  width: 60%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: auto;
+  margin-top: 20%;
+}
+
+img {
+  width: 30%;
+  height: 150px;
+  object-fit: cover;
+}
