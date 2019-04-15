@@ -10,6 +10,13 @@ var PORT = process.env.PORT || 3001;
 
 var bodyParser = require("body-parser");
 
+var handlebars = require("handlebars");
+
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 object1 = {
   name: "Charlie Sheen",
   image: "link",
@@ -24,7 +31,7 @@ object2 = {
 
 object3 = {
   name: "Jennifer Lopez",
-  image: "link",
+  image: "Link",
   answers: [3, 3, 3, 3, 3, 3, 3, 3, 4, 3]
 };
 
@@ -71,7 +78,9 @@ app.post("/api/friends", function(req, res) {
   };
   var closestMatch = data.getDifference(newObject, array);
   array = closestMatch.array;
-  res.send(
-    "Congratulations! Your best match is: " + closestMatch.match.name + "."
-  );
+
+  res.render("return", closestMatch.match);
+  // res.send(
+  //   "Congratulations! Your best match is: " + closestMatch.match.name + "."
+  // );
 });
