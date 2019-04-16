@@ -4,12 +4,19 @@ var express = require("express");
 
 var data = require("./data");
 
+var path = require("path");
+
 var app = express();
 
 var PORT = process.env.PORT || 3001;
 
 var bodyParser = require("body-parser");
 
+//allowing myself to use images etc?
+
+// app.use(express.static("public"));
+
+app.use(express.static(path.join(__dirname, "../public/")));
 var handlebars = require("handlebars");
 
 var exphbs = require("express-handlebars");
@@ -19,19 +26,19 @@ app.set("view engine", "handlebars");
 
 object1 = {
   name: "Charlie Sheen",
-  image: "assets/Charlie_Sheen_2012.jpg",
+  image: "/Charlie_Sheen_2012.jpg",
   answers: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 };
 
 object2 = {
   name: "Daniel Craig",
-  image: "assets/Daniel_Craig_2,_2012.jpg",
+  image: "/Daniel_Craig_2,_2012.jpg",
   answers: [5, 5, 5, 5, 5, 5, 5, 5, 4, 5]
 };
 
 object3 = {
   name: "Jennifer Lopez",
-  image: "assets/JLo.jpg",
+  image: "/JLo.jpg",
   answers: [3, 3, 3, 3, 3, 3, 3, 3, 4, 3]
 };
 
@@ -53,6 +60,10 @@ app.get("/", function(req, res) {
 });
 
 app.get("/survey", function(req, res) {
+  res.sendfile("survey.html");
+});
+
+app.get("/survey.html", function(req, res) {
   res.sendfile("survey.html");
 });
 
