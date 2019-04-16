@@ -59,6 +59,10 @@ app.get("/", function(req, res) {
   res.sendfile("index.html");
 });
 
+app.get("/index.html", function(req, res) {
+  res.sendfile("index.html");
+});
+
 app.get("/survey", function(req, res) {
   res.sendfile("survey.html");
 });
