@@ -39,11 +39,11 @@ function getDifference(responseObject, initialArray) {
     i++;
   });
 
-  // console.log(closestMatch.name);
   initialArray.push(responseObject);
   return { match: closestMatch, array: initialArray };
 }
 
+//export the function so we can use it in the main server
 module.exports = {
   getDifference: getDifference,
 };

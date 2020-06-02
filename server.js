@@ -1,7 +1,6 @@
 var express = require("express");
 
-var express = require("express");
-
+//requiring the function we'll use later on to get the closest match
 var data = require("./data");
 
 var path = require("path");
@@ -11,10 +10,6 @@ var app = express();
 var PORT = process.env.PORT || 3001;
 
 var bodyParser = require("body-parser");
-
-//allowing myself to use images etc?
-
-// app.use(express.static("public"));
 
 app.use(express.static(path.join(__dirname, "../public/")));
 var handlebars = require("handlebars");
@@ -45,7 +40,6 @@ object3 = {
 var array = [object1, object2, object3];
 
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.json());
 
 app.use(express.static("public"));
 
@@ -61,10 +55,6 @@ app.get("/index.html", function (req, res) {
   res.sendfile("index.html");
 });
 
-app.get("/survey", function (req, res) {
-  res.sendfile("survey.html");
-});
-
 app.get("/survey.html", function (req, res) {
   res.sendfile("survey.html");
 });
@@ -72,7 +62,7 @@ app.get("/survey.html", function (req, res) {
 app.post("/api/friends", function (req, res) {
   console.log("Logging the post request");
 
-  //making an object of the user's answers to compare to other users
+  //making an object of the user's answers
   var newObject = {
     name: req.body.firstname,
     answers: [
@@ -93,14 +83,13 @@ app.post("/api/friends", function (req, res) {
   if (req.body.image) {
     newObject.image = req.body.image;
   } else {
+    //If the user doesn't provide an image link, give the generic "mystery" profile link
     newObject.image = "/profileIMG.jpg";
   }
 
+  //get the closest match to the data the user entered
   var closestMatch = data.getDifference(newObject, array);
   array = closestMatch.array;
 
   res.render("return", closestMatch.match);
-  // res.send(
-  //   "Congratulations! Your best match is: " + closestMatch.match.name + "."
-  // );
 });
