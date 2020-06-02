@@ -1,5 +1,5 @@
 # friend_Finder
 
-This is an app in which users can take a quiz and then get matched with either another user or a celebrity already coded into the database. Heroku link is here:
+This is a simple app in which users can find their "perfect match" by taking a short quiz. The program will either connect them with another user, or with a celebrity who is already pre-coded into the database. The app uses a node back-end and handlebars on the front end. Heroku link is here:
 
 https://mercer-cook-friend-finder.herokuapp.com/
